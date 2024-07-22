@@ -65,3 +65,11 @@ resource "aws_instance" "Nvirginia" {
   }  
 }
 
+resource "aws_s3_bucket" "thunithovaikarabucket" {
+  bucket = "thunithovaikarabucket"
+  acl    = "public"
+
+  tags = {
+    Name        = "thunithovaikarabucket"
+  }
+}
