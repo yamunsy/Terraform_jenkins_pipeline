@@ -67,7 +67,7 @@ resource "aws_instance" "Nvirginia" {
 
 resource "aws_s3_bucket" "thunithovaikarabucket" {
   bucket = "thunithovaikarabucket"
-  acl    = "public"
+  acl    = "private"
 
   tags = {
     Name        = "thunithovaikarabucket"
