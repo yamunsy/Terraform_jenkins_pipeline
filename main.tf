@@ -46,7 +46,7 @@ resource "aws_instance" "stockholm" {
   provider = aws.north-1
 
   ami           = "ami-0249211c9916306f8"  # Example AMI, replace with a valid one
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
 
   tags = {
     Name = "stockholm"
