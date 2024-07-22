@@ -15,10 +15,10 @@ provider "aws" {
   profile = "default"
 }
 
-# Provider-2 for ap-southeast-1
+# Provider-2 for eu-north-1
 provider "aws" {
-  region = "ap-southeast-1"
-  alias = "southeast-1"
+  region = "eu-north-1"
+  alias = "north-1"
   profile = "default"
 }
 
@@ -41,15 +41,15 @@ resource "aws_instance" "Mumbai" {
   }
 }
 
-# Create EC2 instances in ap-southeast-1
-resource "aws_instance" "Singapore" {
-  provider = aws.southeast-1
+# Create EC2 instances in eu-north-1
+resource "aws_instance" "stockholm" {
+  provider = aws.north-1
 
-  ami           = "ami-0e97ea97a2f374e3d"  # Example AMI, replace with a valid one
+  ami           = "ami-0249211c9916306f8"  # Example AMI, replace with a valid one
   instance_type = "t2.micro"
 
   tags = {
-    Name = "singapore"
+    Name = "stockholm"
   }
 }
 
@@ -63,4 +63,14 @@ resource "aws_instance" "Nvirginia" {
   tags = {
     Name = "Nvirginia"
   }  
+}
+
+resource "aws_s3_bucket" "vibinbucketsample" {
+  bucket = "vibinbucketsample"
+
+  lifecycle {
+    ignore_changes = [
+      versioning
+    ]
+  }
 }
