@@ -33,7 +33,7 @@ provider "aws" {
 resource "aws_instance" "Mumbai" {
   provider = aws.south-1
 
-  ami           = "ami-01376101673c89611"  # Example AMI, replace with a valid one
+  ami           = "ami-0ec0e125bb6c6e8ec"  # Example AMI, replace with a valid one
   instance_type = "t2.micro"
 
   tags = {
@@ -45,7 +45,7 @@ resource "aws_instance" "Mumbai" {
 resource "aws_instance" "Singapore" {
   provider = aws.southeast-1
 
-  ami           = "ami-060e277c0d4cce553"  # Example AMI, replace with a valid one
+  ami           = "ami-0e97ea97a2f374e3d"  # Example AMI, replace with a valid one
   instance_type = "t2.micro"
 
   tags = {
@@ -57,7 +57,7 @@ resource "aws_instance" "Singapore" {
 resource "aws_instance" "Nvirginia" {
   provider = aws.east-1
 
-  ami           = "ami-04a81a99f5ec58529"  # Example AMI, replace with a valid one
+  ami           = "ami-0b72821e2f351e396"  # Example AMI, replace with a valid one
   instance_type = "t2.micro"
 
   tags = {
