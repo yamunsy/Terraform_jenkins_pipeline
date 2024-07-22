@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        AWS_ACCESS_KEY_ID     = credentials('aws-access-key')
-        AWS_SECRET_ACCESS_KEY = credentials('aws_secret_key')
+        AWS_ACCESS_KEY_ID     = credentials('accesskey')
+        AWS_SECRET_ACCESS_KEY = credentials('secretkey')
         AWS_DEFAULT_REGION    = 'ap-south-1'
     }
 
@@ -28,10 +28,11 @@ pipeline {
             steps {
                 sh 'terraform apply --auto-approve'
             }
-        }   stage('Terraform destroy') {
-            steps {
-                sh 'terraform destroy --auto-approve'      
-           }
-       }
+        }           
+           stage('terraform destroy') {
+           steps {
+               sh 'terraform destroy --auto-approve'
+            }
+        }
     }
 }
