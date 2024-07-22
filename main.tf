@@ -65,12 +65,3 @@ resource "aws_instance" "Nvirginia" {
   }  
 }
 
-resource "aws_s3_bucket" "vibinbucketsample" {
-  bucket = "vibinbucketsample"
-
-  lifecycle {
-    ignore_changes = [
-      versioning
-    ]
-  }
-}
