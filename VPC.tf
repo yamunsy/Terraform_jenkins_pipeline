@@ -198,9 +198,9 @@ resource "aws_nat_gateway" "NATGW" {
 }
 #Resource for ec2 creation with public subnet
 resource "aws_instance" "publicserver" {
-  ami           = "ami-0ad21ae1d0696ad58"
+  ami           = "ami-0dee22c13ea7a9a67"
   instance_type = "t2.micro"
-  key_name      = "jenkins integration"
+  key_name      = "Terraform"
   vpc_security_group_ids = [aws_security_group.publicSG.id]
   subnet_id = aws_subnet.publicsub.id
   associate_public_ip_address = true
@@ -211,9 +211,9 @@ resource "aws_instance" "publicserver" {
 }
 #Resource for ec2 creation with private subnet 
 resource "aws_instance" "privateserver" {
-  ami           = "ami-0ad21ae1d0696ad58"
+  ami           = "ami-0dee22c13ea7a9a67"
   instance_type = "t2.micro"
-  key_name      = "jenkins integration"
+  key_name      = "Terraform"
   vpc_security_group_ids = [aws_security_group.privateSG.id]
   subnet_id = aws_subnet.privatesub.id
   associate_public_ip_address = false
