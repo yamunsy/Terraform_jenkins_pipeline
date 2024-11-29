@@ -3,6 +3,6 @@ resource "aws_instance" "rokesh" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "yamuna"
+    Name = "yamuna-new"
   }
 }
